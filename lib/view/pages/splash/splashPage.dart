@@ -17,7 +17,8 @@ class SplashPage extends StatelessWidget {
           alignment: Alignment.center,
           child: Image.asset(
             'assets/images/logo.png',
-            width: Get.width,
+            width: Get.width, 
+            
           ),
         ),
       ),
