@@ -48,6 +48,7 @@ class _SliderWidgetState extends State<SliderWidget> {
                           child: CachedNetworkImageWidget(
                             imageUrl: item.toString(),
                             fit: BoxFit.cover,
+                            height:widget.sliderHeight,
                           ),
                         ),
                       ),
@@ -55,7 +56,7 @@ class _SliderWidgetState extends State<SliderWidget> {
                   );
                 },
                 options: CarouselOptions(
-                  height: 150,
+                  height: widget.sliderHeight,
                   // aspectRatio: 16 / 9,
                   viewportFraction: 1.5,
                   initialPage: 0,

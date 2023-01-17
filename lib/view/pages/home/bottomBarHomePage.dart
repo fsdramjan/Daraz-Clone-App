@@ -107,12 +107,10 @@ class _BottomBarHomePageState extends State<BottomBarHomePage> {
                                         child: AnimatedTextKit(
                                           repeatForever: true,
                                           animatedTexts: [
-                                            RotateAnimatedText('Shop Now'),
+                                            // RotateAnimatedText('Shop Now'),
                                             RotateAnimatedText('Categories'),
                                           ],
                                           onTap: () {
-                                            print("Tap Event");
-
                                             Get.toNamed(
                                               AppRouteService.category,
                                             );

@@ -16,6 +16,11 @@ import 'services/configs/appColors.dart';
 import 'view/pages/home/bottomBarHomePage.dart';
 import 'view/pages/home/homePage.dart';
 
+import 'package:appbar_animated/appbar_animated.dart';
+
+import 'view/widgets/buttons/iconButton.dart';
+import 'view/widgets/slider/sliderWidget.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -40,7 +45,7 @@ class App extends StatelessWidget {
       initialRoute: AppRouteService.splash,
       theme: AppTheme.appTheme,
       debugShowCheckedModeBanner: false,
-      // home: HomePage(),
+ 
       getPages: [
         GetPage(name: AppRouteService.home, page: () => HomePage()),
         GetPage(
@@ -61,3 +66,4 @@ class App extends StatelessWidget {
     );
   }
 }
+ 
