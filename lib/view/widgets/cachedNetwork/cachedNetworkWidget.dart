@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:enayas_app/services/helpers/loading.dart';
 import 'package:flutter/material.dart';
 
 class CachedNetworkImageWidget extends StatelessWidget {
@@ -38,7 +39,7 @@ class CachedNetworkImageWidget extends StatelessWidget {
         colorBlendMode: colorBlendMode,
         color: color,
         progressIndicatorBuilder: (context, url, downloadProgress) => Center(
-          child: CircularProgressIndicator(),
+          child: loadingAnimation(),
         ),
         errorWidget: (context, url, error) => Icon(Icons.error),
       ),

@@ -6,10 +6,11 @@ Widget backButton({
   IconData? icon,
   Color? iconColor,
   double? iconSize,
+  void Function()? onBack,
 }) {
   return iconButton(
     tooltip: 'Back',
-    onTap: () => Get.back(),
+    onTap:onBack?? () => Get.back(),
     icons: icon ?? Icons.arrow_back,
     iconColor: iconColor,
     iconSize: iconSize,

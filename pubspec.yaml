@@ -21,8 +21,14 @@ dependencies:
   carousel_slider: ^4.2.1
   cached_network_image: ^3.2.3
   animated_text_kit: ^4.2.2
-  appbar_animated: ^0.0.3
-
+  dio:
+  get_storage: ^2.1.1
+  fluttertoast: ^8.2.1
+  lottie: ^2.3.2
+  flutter_html: ^2.2.1
+  geolocator:
+  geocoding:
+  image_picker: ^0.8.7+2
 
 
 dev_dependencies:

@@ -9,12 +9,16 @@ import 'package:enayas_app/view/pages/profile/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../services/configs/appColors.dart';
 import '../../../services/configs/appUtils.dart';
+import '../../../services/helpers/allController.dart';
 import '../../widgets/text/kText.dart';
 
 class BottomBarHomePage extends StatefulWidget {
+  final int? selectedIndex;
+  BottomBarHomePage({
+    this.selectedIndex = 0,
+  });
   @override
   State<BottomBarHomePage> createState() => _BottomBarHomePageState();
 }
@@ -32,7 +36,7 @@ class _BottomBarHomePageState extends State<BottomBarHomePage> {
   ];
   @override
   void initState() {
-    _selectedIndex.value = 0;
+    _selectedIndex.value = widget.selectedIndex ?? 0;
     isHome.value = true;
     super.initState();
   }
@@ -178,12 +182,41 @@ class _BottomBarHomePageState extends State<BottomBarHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  icons,
-                  color: itemIndex == _selectedIndex.value
-                      ? AppColors.pink
-                      : AppColors.black.withOpacity(.5),
-                  size: 20,
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Icon(
+                      icons,
+                      color: itemIndex == _selectedIndex.value
+                          ? AppColors.pink
+                          : AppColors.black.withOpacity(.5),
+                      size: 20,
+                    ),
+                    itemIndex != 2
+                        ? SizedBox()
+                        : Positioned(
+                            right: -10,
+                            top: -10,
+                            child: Obx(
+                              () => AllController.cartC.isLoading.value == true
+                                  ? Container()
+                                  : AllController.cartC.cartList.length == 0
+                                      ? Container()
+                                      : CircleAvatar(
+                                          radius: 7.5,
+                                          backgroundColor: AppColors.pink,
+                                          child: KText(
+                                            text: AllController
+                                                .cartC.cartList.length
+                                                .toString(),
+                                            color: AppColors.white,
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 9,
+                                          ),
+                                        ),
+                            ),
+                          ),
+                  ],
                 ),
                 KText(
                   text: text,

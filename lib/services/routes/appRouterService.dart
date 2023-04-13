@@ -8,6 +8,7 @@ class AppRouteService {
   static final categoryProductPage = '/category/product';
   static final profile = '/profile';
   static final login = '/login';
+  static final register = '/register';
   static final chatList = '/chat/list';
   static final cart = '/cart';
   static final productDetails = '/product/details/:id';

@@ -22,6 +22,7 @@ class KText extends StatelessWidget {
   TextOverflow? overflow;
   bool? isHeadTitle;
   Paint? foreground;
+  FontStyle? fontStyle;
   KText({
     required this.text,
     this.color,
@@ -37,6 +38,7 @@ class KText extends StatelessWidget {
     this.overflow,
     this.isHeadTitle,
     this.foreground,
+    this.fontStyle,
   });
 
   @override
@@ -51,6 +53,7 @@ class KText extends StatelessWidget {
         wordSpacing: wordSpacing,
         letterSpacing: letterSpacing,
         foreground: foreground,
+        fontStyle: fontStyle,
       ),
       maxLines: maxLines,
       textAlign: textAlign,
